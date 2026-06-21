@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>油咖喱的日常</title>
+    <link>https://yukari.blog/</link>
+    <description>It&#39;s the only NEET thing to do.&#xA;</description>
+    <language>zh-cn</language>
+    <generator>Gridea Pro</generator>
+    <lastBuildDate>Mon, 22 Jun 2026 06:58:30 +0800</lastBuildDate>
+    <atom:link href="https://yukari.blog/feed.xml" rel="self" type="application/rss+xml"></atom:link>
+    <item>
+      <title>常用VPS脚本</title>
+      <link>https://yukari.blog/post/chang-yong-vpsjiao-ben/</link>
+      <guid isPermaLink="true">https://yukari.blog/post/chang-yong-vpsjiao-ben/</guid>
+      <pubDate>Mon, 22 Jun 2026 06:58:30 +0800</pubDate>
+      <description><![CDATA[<h1 id="vps-">VPS 常用脚本整理</h1>
+<blockquote>
+<p>原帖来源：https://www.nodeseek.com/post-183694-1</p>
+</blockquote>
+<hr />
+<h2 id="1-dd-">1. DD 重装脚本</h2>
+<h3 id="heading">史上最强脚本</h3>
+<pre><code class="language-bash">wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' &amp;&amp; chmod a+x InstallNET.sh &amp;&amp; bash InstallNET.sh -debian 12 -pwd 'password'
+</code></pre>
+<h3 id="heading-1">萌咖大佬脚本</h3>
+<pre><code class="language-bash">bash &lt;(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 11 -v 64 -p 密码 -port 端口 -a -firmware
+</code></pre>
+<h3 id="betags-">beta.gs 大佬脚本</h3>
+<pre><code class="language-bash">wget --no-check-certificate -O NewReinstall.sh https://raw.githubusercontent.com/fcurrk/reinstall/master/NewReinstall.sh &amp;&amp; chmod a+x NewReinstall.sh &amp;&amp; bash NewReinstall.sh
+</code></pre>
+<h3 id="dd-windows-dd-">DD Windows（使用史上最强 DD 脚本）</h3>
+<pre><code class="language-bash">bash &lt;(curl -sSL https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh) -windows 10 -lang &quot;cn&quot;
+</code></pre>
+<p>默认信息：</p>
+<pre><code class="language-text">账户：Administrator
+密码：Teddysun.com
+</code></pre>
+<p>Windows 激活：</p>
+<pre><code class="language-powershell">irm https://get.activated.win | iex
+</code></pre>
+<hr />
+<h2 id="2-">2. 综合测试脚本</h2>
+<h3 id="benchsh">bench.sh</h3>
+<pre><code class="language-bash">wget -qO- bench.sh | bash
+</code></pre>
+<h3 id="lemonbench">LemonBench</h3>
+<p>项目地址：https://github.com/LemonBench/LemonBench</p>
+<pre><code class="language-bash">wget -qO- https://raw.githubusercontent.com/LemonBench/LemonBench/main/LemonBench.sh | bash -s -- --fast
+</code></pre>
+<h3 id="heading-2">融合怪</h3>
+<pre><code class="language-bash">bash &lt;(wget -qO- --no-check-certificate https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh)
+</code></pre>
+<h3 id="nodebench">NodeBench</h3>
+<p>项目地址：https://github.com/LloydAsp/NodeBench</p>
+<pre><code class="language-bash">bash &lt;(curl -sL https://raw.githubusercontent.com/LloydAsp/NodeBench/main/NodeBench.sh)
+</code></pre>
+<hr />
+<h2 id="3-">3. 性能测试</h2>
+<h3 id="yabs">YABS</h3>
+<p>项目地址：https://github.com/masonr/yet-another-bench-script</p>
+<pre><code class="language-bash">curl -sL yabs.sh | bash
+</code></pre>
+<h3 id="-gb5">跳过网络测速，仅测 GB5</h3>
+<pre><code class="language-bash">curl -sL yabs.sh | bash -s -- -i5
+</code></pre>
+<h3 id="-gb5-1">跳过网络和磁盘测速，仅测 GB5</h3>
+<pre><code class="language-bash">curl -sL yabs.sh | bash -s -- -if5
+</code></pre>
+<h3 id="-gb5--gb6">测 GB5 不测 GB6</h3>
+<pre><code class="language-bash">curl -sL yabs.sh | bash -s -- -5
+</code></pre>
+<hr />
+<h2 id="4--ip-">4. 流媒体及 IP 质量测试</h2>
+<h3 id="heading-3">最常用版本</h3>
+<pre><code class="language-bash">bash &lt;(curl -L -s check.unlock.media)
+</code></pre>
+<h3 id="heading-4">原生检测脚本</h3>
+<pre><code class="language-bash">bash &lt;(curl -sL Media.Check.Place)
+</code></pre>
+<h3 id="heading-5">准确度最高</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/1-stream/RegionRestrictionCheck">https://github.com/1-stream/RegionRestrictionCheck</a></p>
+<pre><code class="language-bash">bash &lt;(curl -L -s https://github.com/1-stream/RegionRestrictionCheck/raw/main/check.sh)
+</code></pre>
+<h3 id="ip-">IP 质量体检</h3>
+<pre><code class="language-bash">bash &lt;(curl -sL IP.Check.Place)
+</code></pre>
+<h3 id="-dns">一键修改解锁 DNS</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/Jimmyzxk/DNS-Alice-Unlock">https://github.com/Jimmyzxk/DNS-Alice-Unlock</a></p>
+<pre><code class="language-bash">wget https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh &amp;&amp; bash dns-unlock.sh
+</code></pre>
+<hr />
+<h2 id="5-">5. 测速脚本</h2>
+<h3 id="speedtest">Speedtest</h3>
+<pre><code class="language-bash">bash &lt;(curl -sL bash.icu/speedtest)
+</code></pre>
+<h3 id="taier">Taier</h3>
+<pre><code class="language-bash">bash &lt;(curl -sL res.yserver.ink/taier.sh)
+</code></pre>
+<h3 id="hyperspeed">Hyperspeed</h3>
+<pre><code class="language-bash">bash &lt;(curl -Lso- https://bench.im/hyperspeed)
+</code></pre>
+<h3 id="heading-6">全球测速</h3>
+<pre><code class="language-bash">wget -qO- nws.sh | bash
+</code></pre>
+<h3 id="heading-7">区域测速</h3>
+<pre><code class="language-bash">wget -qO- nws.sh | bash -s -- -r region_name
+</code></pre>
+<h3 id="ping-">Ping 与路由测试</h3>
+<pre><code class="language-bash">wget -qO- nws.sh | bash -s -- -rt [region]
+</code></pre>
+<hr />
+<h2 id="6-">6. 回程测试</h2>
+<h3 id="heading-8">直接显示回程（推荐小白）</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/ludashi2020/backtrace">https://github.com/ludashi2020/backtrace</a></p>
+<pre><code class="language-bash">curl https://raw.githubusercontent.com/ludashi2020/backtrace/main/install.sh -sSf | sh
+</code></pre>
+<h3 id="heading-9">回程详细测试</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/Chennhaoo/Shell_Bash">https://github.com/Chennhaoo/Shell_Bash</a></p>
+<pre><code class="language-bash">wget -N --no-check-certificate https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh &amp;&amp; chmod +x AutoTrace.sh &amp;&amp; bash AutoTrace.sh
+</code></pre>
+<h3 id="testrace">testrace</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/vpsxb/testrace">https://github.com/vpsxb/testrace</a></p>
+<pre><code class="language-bash">wget https://ghproxy.com/https://raw.githubusercontent.com/vpsxb/testrace/main/testrace.sh -O testrace.sh &amp;&amp; bash testrace.sh
+</code></pre>
+<hr />
+<h2 id="7-">7. 功能脚本</h2>
+<h3 id="-swap">添加 SWAP</h3>
+<pre><code class="language-bash">wget https://www.moerats.com/usr/shell/swap.sh &amp;&amp; bash swap.sh
+</code></pre>
+<h3 id="fail2ban">Fail2ban</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/FunctionClub/Fail2ban">https://github.com/FunctionClub/Fail2ban</a></p>
+<pre><code class="language-bash">wget --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh &amp;&amp; bash fail2ban.sh 2&gt;&amp;1 | tee fail2ban.log
+</code></pre>
+<h3 id="-bbr">一键开启 BBR</h3>
+<pre><code class="language-bash">echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf
+echo &quot;net.ipv4.tcp_congestion_control=bbr&quot; &gt;&gt; /etc/sysctl.conf
+sysctl -p
+sysctl net.ipv4.tcp_available_congestion_control
+lsmod | grep bbr
+</code></pre>
+<h3 id="-bbr-1">多功能 BBR</h3>
+<pre><code class="language-bash">wget -N --no-check-certificate &quot;https://gist.github.com/zeruns/a0ec603f20d1b86de6a774a8ba27588f/raw/4f9957ae23f5efb2bb7c57a198ae2cffebfb1c56/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh
+</code></pre>
+<h3 id="--bbrplus--bbr2--bbr3">锐速 / BBRPlus / BBR2 / BBR3</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/ylx2016/Linux-NetSpeed">https://github.com/ylx2016/Linux-NetSpeed</a></p>
+<pre><code class="language-bash">wget -O tcpx.sh &quot;https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh&quot; &amp;&amp; chmod +x tcpx.sh &amp;&amp; ./tcpx.sh
+</code></pre>
+<h3 id="tcp-">TCP 窗口调优</h3>
+<pre><code class="language-bash">wget http://sh.nekoneko.cloud/tools.sh -O tools.sh &amp;&amp; bash tools.sh
+</code></pre>
+<h3 id="-warp">添加 WARP</h3>
+<p>项目地址：</p>
+<p><a href="https://gitlab.com/fscarmen/warp">https://gitlab.com/fscarmen/warp</a></p>
+<pre><code class="language-bash">wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;&amp; bash menu.sh [option] [license/url/token]
+</code></pre>
+<h3 id="25-">25 端口测试</h3>
+<pre><code class="language-bash">telnet smtp.aol.com 25
+</code></pre>
+<hr />
+<h2 id="8-">8. 一键安装常用环境及软件</h2>
+<h3 id="docker">Docker</h3>
+<p>官方安装：</p>
+<pre><code class="language-bash">bash &lt;(curl -sL 'https://get.docker.com')
+</code></pre>
+<h3 id="python">Python</h3>
+<pre><code class="language-bash">curl -O https://raw.githubusercontent.com/lx969788249/lxspacepy/master/pyinstall.sh &amp;&amp; chmod +x pyinstall.sh &amp;&amp; ./pyinstall.sh
+</code></pre>
+<h3 id="iperf3">iperf3</h3>
+<pre><code class="language-bash">apt install iperf3
+</code></pre>
+<h3 id="realm">Realm</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/zhouh047/realm-oneclick-install">https://github.com/zhouh047/realm-oneclick-install</a></p>
+<pre><code class="language-bash">bash &lt;(curl -L https://raw.githubusercontent.com/zhouh047/realm-oneclick-install/main/realm.sh) -i
+</code></pre>
+<h3 id="gost">Gost</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/qqrrooty/EZgost">https://github.com/qqrrooty/EZgost</a></p>
+<pre><code class="language-bash">wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/qqrrooty/EZgost/main/gost.sh &amp;&amp; chmod +x gost.sh &amp;&amp; ./gost.sh
+</code></pre>
+<h3 id="heading-10">极光面板</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/Aurora-Admin-Panel/deploy">https://github.com/Aurora-Admin-Panel/deploy</a></p>
+<pre><code class="language-bash">bash &lt;(curl -fsSL https://raw.githubusercontent.com/Aurora-Admin-Panel/deploy/main/install.sh)
+</code></pre>
+<h3 id="heading-11">哪吒监控</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/nezhahq/nezha">https://github.com/nezhahq/nezha</a></p>
+<pre><code class="language-bash">curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh &amp;&amp; chmod +x nezha.sh &amp;&amp; sudo ./nezha.sh
+</code></pre>
+<h3 id="warp">WARP</h3>
+<pre><code class="language-bash">wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh &amp;&amp; bash menu.sh
+</code></pre>
+<h3 id="aria2">Aria2</h3>
+<pre><code class="language-bash">wget -N git.io/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; ./aria2.sh
+</code></pre>
+<h3 id="heading-12">宝塔面板</h3>
+<pre><code class="language-bash">wget -O install.sh http://v7.hostcli.com/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh
+</code></pre>
+<h3 id="pve-">PVE 虚拟化</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/oneclickvirt/pve">https://github.com/oneclickvirt/pve</a></p>
+<pre><code class="language-bash">bash &lt;(wget -qO- --no-check-certificate https://raw.githubusercontent.com/oneclickvirt/pve/main/scripts/build_backend.sh)
+</code></pre>
+<h3 id="argox">Argox</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/fscarmen/argox">https://github.com/fscarmen/argox</a></p>
+<pre><code class="language-bash">bash &lt;(wget -qO- https://raw.githubusercontent.com/fscarmen/argox/main/argox.sh)
+</code></pre>
+<hr />
+<h2 id="9-">9. 综合功能脚本</h2>
+<h3 id="-lion">科技 Lion</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/kejilion/sh">https://github.com/kejilion/sh</a></p>
+<pre><code class="language-bash">apt update -y &amp;&amp; apt install -y curl
+bash &lt;(curl -sL kejilion.sh)
+</code></pre>
+<h3 id="sky-box">SKY-BOX</h3>
+<p>项目地址：</p>
+<p><a href="https://github.com/BlueSkyXN/SKY-BOX">https://github.com/BlueSkyXN/SKY-BOX</a></p>
+<pre><code class="language-bash">wget -O box.sh https://raw.githubusercontent.com/BlueSkyXN/SKY-BOX/main/box.sh &amp;&amp; chmod +x box.sh &amp;&amp; clear &amp;&amp; ./box.sh
+</code></pre>
+<hr />
+<h2 id="10-">10. 其它</h2>
+<h3 id="telegram-">Telegram 中文汉化</h3>
+<p><a href="https://t.me/setlanguage/classic-zh-cn">https://t.me/setlanguage/classic-zh-cn</a></p>
+<h3 id="google-ip-">Google IP 误判申诉</h3>
+<p>Google 帮助中心：</p>
+<p><a href="https://support.google.com/">https://support.google.com/</a></p>
+<h3 id="tcp--1">TCP 迷之调参</h3>
+<p>待补充。</p>
+<h3 id="awesome-docker">Awesome Docker</h3>
+<p>待补充。</p>
+<hr />
+<h2 id="11-vps-">11. VPS 常备小命令（非脚本）</h2>
+<p>原帖：</p>
+<p><a href="https://www.nodeseek.com/post-424648-1">https://www.nodeseek.com/post-424648-1</a></p>
+<hr />
+]]></description>
+    </item>
+  </channel>
+</rss>
